@@ -1,0 +1,115 @@
+* {
+	box-sizing: border-box;
+}
+.uvm--select {
+	font-family: Roboto, Sans-serif;
+	padding: 15px 25px 15px 25px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	position: relative;
+	cursor: pointer;
+	font-size: 22px;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flex;
+	display: -o-inline-flex;
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-start;
+	background: #F3F3F3;
+	border-radius: 10px;
+	width: 350px;
+	margin-top: 2vh;
+	margin-left: 2vh;
+	color: #535353;
+}
+.uvm--search-container {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+}
+.uvm--search-container input {
+	padding: 10px 10px 10px 10px;
+	font-size: 20px;
+	width: 100%;
+	outline: none;
+	border: none;
+	background: #F3F3F3;
+}
+.uvm--select::after {
+	content: '';
+	display: flex;
+	border-right: 2px solid #585858;
+	border-bottom: 2px solid #585858;
+	height: 10px;
+	width: 10px;
+	transform: rotate(45deg);
+	margin-top: -4px;
+	margin-left: 10px;
+	transition: all 0.15s ease-in-out;
+	transform-origin: 66% 66%;
+}
+.uvm--options {
+	opacity: 0;
+	z-index: 2;
+	visibility: hidden;
+	position: absolute;	
+	transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+	top: 100%;
+	/*margin-top: 3px;*/
+	white-space: nowrap;
+	left: 0;
+	border-radius: 10px;
+	transform: scale(0);
+	cursor: default;
+	transform-origin: 50% 0;
+	background: #F3F3F3;
+	overflow: hidden;
+	width: 100%;
+}
+.uvm--options-list {
+	padding: 0;
+	margin: 0;
+	max-height: 300px;
+	overflow: auto;
+}
+.uvm--current-item {
+	pointer-events: none;
+	width: 100%;
+}
+.uvm--option {
+	width: 100%;
+	color: #535353;
+	list-style-type: none;
+	transition: 0.25s;
+	padding: 10px 10px 10px 10px;
+	cursor: pointer;
+}
+.uvm--option:hover {
+	background: #D8D4D4;
+}
+.uvm--selected,
+.edit-selected {
+	font-weight: bold;
+	background: #f6f7f9;
+}
+.uvm--select.uvm--opened .uvm--options {
+	visibility: visible;
+	opacity: 1;
+	transform: scale(1) translateY(0);
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+.uvm--select.uvm--opened::after {
+	transform: rotate(-135deg);
+}
+.uvm--select.uvm--opened {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}

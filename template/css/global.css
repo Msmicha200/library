@@ -1,0 +1,55 @@
+@font-face {
+	src: url('/template/fonts/Roboto-Regular.ttf');
+	font-family: Roboto;
+}
+* {
+	font-family: Roboto;
+	box-sizing: border-box;
+}
+.flex {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+.jcc {
+	justify-content: center;
+}
+.alic {
+	-ms-align-items: center;
+	align-items: center;
+}
+.alifs {
+	-ms-align-items: flex-start;
+	align-items: flex-start;
+}
+.alife {
+	-ms-align-items: flex-end;
+	align-items: flex-end;
+}
+.fdc {
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+}
+.jcsb {
+	justify-content: space-between;
+}
+.jcsa {
+	justify-content: space-around;
+}
+.jcfe {
+	justify-content: flex-end;
+}
+.jcfs {
+	justify-content: flex-start;
+}
+.fw {
+	flex-wrap: wrap;
+}
+.hidden-like {
+	max-height: 0 !important;
+}

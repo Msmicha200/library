@@ -1,0 +1,12 @@
+
+	<?php
+		foreach (scandir(ROOT."/template/css/")
+			as $file ):?>
+		<?php if (file_exists(
+			ROOT."/template/css/".$file)
+		&& endsWith($file, ".css")): ?>
+		<link rel="stylesheet"
+		type="text/css"
+		href="/template/css/<?php echo $file; ?>">
+		<?php endif; ?>
+	<?php endforeach; ?>
